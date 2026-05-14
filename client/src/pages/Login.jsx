@@ -6,6 +6,7 @@ import '../styles/auth.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPw, setShowPw] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
@@ -43,18 +44,20 @@ const Login = () => {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
-          <h1>Welcome Back</h1>
-          <p>Sign in to your account</p>
+          <div className="auth-logo">📄</div>
+          <h1>Welcome back</h1>
+          <p>Sign in to your DocClassify account</p>
         </div>
 
-        {error && <div className="error-banner">{error}</div>}
+        {error && <div className="error-banner" role="alert">{error}</div>}
 
-        <form onSubmit={handleSubmit} className="auth-form">
+        <form onSubmit={handleSubmit} className="auth-form" noValidate>
           <div className="form-group">
-            <label htmlFor="email">Email Address</label>
+            <label htmlFor="email">Email address</label>
             <input
               type="email"
               id="email"
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
@@ -65,35 +68,35 @@ const Login = () => {
 
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
-              disabled={loading}
-              required
-            />
+            <div className="password-wrapper">
+              <input
+                type={showPw ? 'text' : 'password'}
+                id="password"
+                autoComplete="current-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                disabled={loading}
+                required
+              />
+              <button
+                type="button"
+                className="password-toggle"
+                onClick={() => setShowPw(!showPw)}
+                aria-label={showPw ? 'Hide password' : 'Show password'}
+              >
+                {showPw ? '🙈' : '👁'}
+              </button>
+            </div>
           </div>
 
           <button type="submit" className="submit-btn" disabled={loading}>
-            {loading ? (
-              <>
-                <span className="spinner-small"></span> Signing in...
-              </>
-            ) : (
-              'Sign In'
-            )}
+            {loading ? <><span className="spinner-sm"></span> Signing in…</> : 'Sign in →'}
           </button>
         </form>
 
         <div className="auth-footer">
-          <p>
-            Don't have an account?{' '}
-            <Link to="/register" className="auth-link">
-              Sign up here
-            </Link>
-          </p>
+          <p>Don't have an account? <Link to="/register" className="auth-link">Create one free</Link></p>
         </div>
       </div>
     </div>
