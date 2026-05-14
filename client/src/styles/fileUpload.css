@@ -197,23 +197,40 @@
   width: 100%;
   padding: var(--space-5) var(--space-8);
   font-size: 1.0625rem;
-  font-weight: 700;
+  font-weight: 800;
   font-family: var(--font-sans);
   color: var(--text-inverse);
-  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   border: none;
   border-radius: var(--radius-lg);
   cursor: pointer;
-  transition: var(--transition-base);
+  transition: all 200ms ease-in-out;
   letter-spacing: 0.01em;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
   min-height: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
 }
 
 .upload-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, var(--primary-hover), var(--primary));
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.5);
+}
+
+.upload-btn:hover:not(:disabled)::before {
+  left: 100%;
 }
 
 .upload-btn:active:not(:disabled) {

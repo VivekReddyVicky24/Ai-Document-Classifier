@@ -44,7 +44,6 @@ const Login = () => {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
-          <div className="auth-logo">📄</div>
           <h1>Welcome back</h1>
           <p>Sign in to your DocClassify account</p>
         </div>

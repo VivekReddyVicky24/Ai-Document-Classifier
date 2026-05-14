@@ -21,19 +21,25 @@
 }
 
 /* Brand */
-.navbar-brand .brand-link {
+.brand-link {
   display: flex;
   align-items: center;
   gap: var(--space-2);
   font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-decoration: none;
   letter-spacing: -0.02em;
   transition: var(--transition-base);
 }
 
-.navbar-brand .brand-link:hover { color: var(--primary); }
+.brand-link:hover { 
+  opacity: 0.8;
+  filter: brightness(1.1);
+}
 
 .brand-icon {
   width: 32px; height: 32px;

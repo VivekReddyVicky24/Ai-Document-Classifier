@@ -53,17 +53,7 @@
   margin-bottom: var(--space-8);
 }
 
-.auth-logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px; height: 56px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  border-radius: var(--radius-lg);
-  font-size: 24px;
-  margin-bottom: var(--space-5);
-  box-shadow: 0 8px 16px rgba(37,99,235,0.25);
-}
+
 
 .auth-header h1 {
   font-size: 1.75rem;
@@ -228,10 +218,10 @@
   width: 100%;
   padding: var(--space-4) var(--space-8);
   font-size: 1.0625rem;
-  font-weight: 700;
+  font-weight: 800;
   font-family: var(--font-sans);
   color: var(--text-inverse);
-  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
   border: none;
   border-radius: var(--radius-lg);
   cursor: pointer;
@@ -239,17 +229,34 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  transition: var(--transition-base);
+  transition: all 200ms ease-in-out;
   margin-top: var(--space-4);
   letter-spacing: 0.01em;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
   min-height: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.5);
+}
+
+.submit-btn:hover:not(:disabled)::before {
+  left: 100%;
 }
 
 .submit-btn:active:not(:disabled) { transform: translateY(0); }

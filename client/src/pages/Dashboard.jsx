@@ -37,7 +37,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
-        <h1>📊 AI Document Classifier</h1>
+        <h1>AI Document Classifier</h1>
         <p>Upload PDF documents for AI-powered classification</p>
       </div>
 

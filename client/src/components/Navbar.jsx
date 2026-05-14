@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-brand">
           <Link to="/" className="brand-link">
-            📄 AI Document Classifier
+            AI Document Classifier
           </Link>
         </div>
 
