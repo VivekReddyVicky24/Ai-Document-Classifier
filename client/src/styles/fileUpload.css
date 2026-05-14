@@ -1,24 +1,24 @@
 /* === CONTAINER === */
 .file-upload-container {
   background: var(--bg-white);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   overflow: hidden;
 }
 
 .upload-section {
-  padding: var(--space-6);
+  padding: var(--space-8);
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-8);
 }
 
 /* === DRAG-DROP AREA === */
 .drag-drop-area {
-  border: 2px dashed var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-12) var(--space-6);
+  border: 3px dashed var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12) var(--space-8);
   text-align: center;
   cursor: pointer;
   transition: var(--transition-slow);
@@ -26,7 +26,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-5);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .drag-drop-area:hover {
@@ -70,18 +71,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-8);
   background: linear-gradient(135deg, var(--primary), var(--primary-hover));
   color: var(--text-inverse);
-  border-radius: var(--radius-full);
-  font-size: 0.9375rem;
-  font-weight: 600;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
   transition: var(--transition-base);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
   border: 2px solid transparent;
-}
+  min-height: 48px;
+  letter-spacing: 0.3px;
 
 .file-input-label:hover { 
   background: linear-gradient(135deg, var(--primary-hover), var(--primary));
@@ -191,20 +193,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
   width: 100%;
-  padding: var(--space-4) var(--space-6);
-  font-size: 1rem;
+  padding: var(--space-5) var(--space-8);
+  font-size: 1.0625rem;
   font-weight: 700;
   font-family: var(--font-sans);
   color: var(--text-inverse);
   background: linear-gradient(135deg, var(--primary), var(--primary-hover));
   border: none;
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  border-radius: var(--radius-lg);
   cursor: pointer;
   transition: var(--transition-base);
   letter-spacing: 0.01em;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+  min-height: 48px;
 }
 
 .upload-btn:hover:not(:disabled) {
